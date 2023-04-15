@@ -1,0 +1,18 @@
+#+title: Another modified version of PaperMod 
+#+author: yaideltg
+
+This is yet another modification to the PaperMod Hugo theme. I customize it to my needs, removing everything I
+found unnecessary. 
+
+* Making it work on your own site
+
+I have included an example site (see =exampleSite= folder). To make it work, you just need to copy all the
+theme folders, i.e. excluding =exampleSite=, into =/exampleSite/themes/PaperMod/=. Another alternative is to use
+links, like
+
+#+begin_src shell
+  cd exampleSite/theme
+  ln -s ../../../PaperMod
+  hugo server -D --noHTTPCache --disableFastRender --navigateToChanged
+#+end_src
+
