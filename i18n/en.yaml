@@ -32,9 +32,6 @@
 - id: code_copied
   translation: "copied!"
 
-- id: lastmodDate
-  translation: "This post was last modified on "
-
 - id: license-more
   translation: "Read more about the Licensing of the site and all related content at "
 
