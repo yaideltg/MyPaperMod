@@ -35,6 +35,7 @@
     {{ range $pages }}
     {{- if and (ne .Layout `search`) (ne .Layout `archives`) }}
     {{- $title := htmlEscape .Title -}}
+    {{- $thank := (printf "Thanks for reading via RSS. You can see the content of <a href='%s'>this post on the browser</a>, and if you would like to discuss on it do not hesitate to send <a href='mailto:contact@poview.org?subject=Re: %s'>me an email</a>." .Permalink $title) | safeHTML -}}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -43,9 +44,8 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ with .Description | html }}{{ . }}{{ else }}{{ .Summary | html }}{{ end -}}</description>
       {{- if site.Params.ShowFullTextinRSS }}
-      <content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}
-      <hr />
-      <p>{{ (printf "Thanks for reading via RSS. You can see the content of <a href='%s'>this post on the browser</a>, and if you would like to discuss on it do not hesitate to send <a href='mailto:contact@poview.org?subject=Re: %s'>me an email</a>." .Permalink $title) | safeHTML }}</p>
+      <content:encoded>
+        {{- (printf "<![CDATA[%s <hr /> <p>%s</p>]]>" .Content $thank) | safeHTML }}
       </content:encoded>
       {{- end }}
     </item>

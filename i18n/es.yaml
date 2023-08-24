@@ -38,3 +38,6 @@
 - id: license
   translation: "Información Legal"
 
+- id: thanks
+  translation: "Gracias por leer el post. No dudes en enviarme un correo para cualquier comentario o pregunta que tengas (así ambos mejoramos): "
+

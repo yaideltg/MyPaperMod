@@ -28,13 +28,16 @@
   {{- end }}
 
   {{- if .Content }}
+  {{- $title := htmlEscape .Title -}}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
+    <div style="text-align: center; padding: 20px;"> &#8903; &#8903; &#8903; &#8903; &#8903; </div>
+    <p>{{ i18n "thanks" }} {{ (printf "<a href='mailto:contact@poview.org?subject=Re: %s'>contact@poview.org</a>" $title) | safeHTML }}</p>
   </div>
   {{- end }}
-
+  
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
