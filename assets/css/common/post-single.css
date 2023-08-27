@@ -29,7 +29,7 @@
     display: inline-flex;
     list-style: none;
     margin: auto 3px;
-    box-shadow: 0 1px 0 var(--secondary);
+    /* box-shadow: 0 1px 0 var(--secondary); */
 }
 
 .breadcrumbs a {
@@ -75,6 +75,32 @@
     font-size: 12px;
 }
 
+
+/* Link decoration of the Translations */
+.i18n_list li a {
+  position: relative;
+}
+
+.i18n_list li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+
+.i18n_list li a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+/* Link decoration of the Translations - END */
+
 /* Link decoration in the Table Of Contents */
 .toc a {
   text-decoration: none;
@@ -84,8 +110,8 @@
     background:
         linear-gradient(
             to right,
-            hsla(196, 61%, 58%, .75),
-            hsla(196, 61%, 58%, .75)
+            hsla(196, 71%, 58%, .75),
+            hsla(196, 71%, 58%, .75)
         ),
         linear-gradient(
             to right,
@@ -93,14 +119,14 @@
             rgba(255, 0, 180, 1),
             rgba(0, 100, 200, 1)
         );
-    background-size: 100% 1px, 0 3px;
+    background-size: 100% 2px, 0 3px;
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
-    transition: background-size 400ms;
+    transition: background-size 300ms;
 }
 
 .toc a:hover {
-  background-size: 0 3px, 100% 3px;
+  background-size: 0 2px, 100% 3px;
 }
 /* Link decoration in the Table Of Contents - END  */
 
