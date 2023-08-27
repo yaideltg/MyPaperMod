@@ -75,16 +75,36 @@
     font-size: 12px;
 }
 
-
-.toc a:hover {
-    box-shadow: 0 1px 0;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+/* Link decoration in the Table Of Contents */
+.toc a {
+  text-decoration: none;
 }
 
+.toc a {
+    background:
+        linear-gradient(
+            to right,
+            hsla(196, 61%, 58%, .75),
+            hsla(196, 61%, 58%, .75)
+        ),
+        linear-gradient(
+            to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1)
+        );
+    background-size: 100% 1px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.toc a:hover {
+  background-size: 0 3px, 100% 3px;
+}
+/* Link decoration in the Table Of Contents - END  */
 
 /* Links decoration in the posts */
-
 .post-content a {
   text-decoration: none;
   position: relative;
@@ -108,7 +128,6 @@
   height: 110%;
   opacity: 1;
 }
-
 /* Links decoration in the posts - END */
 
 .post-content del {
