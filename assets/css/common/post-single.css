@@ -131,12 +131,14 @@
 /* Link decoration in the Table Of Contents - END  */
 
 /* Links decoration in the posts */
-.post-content p a {
+.post-content p a,
+.post-content li a {
   text-decoration: none;
   position: relative;
 }
 
-.post-content p a::before {
+.post-content p a::before,
+.post-content li a::before {
   content: '';
   background-color: hsla(196, 61%, 58%, .75);
   opacity: 0.4;
@@ -149,7 +151,8 @@
   transition: all .3s ease-in-out;
 }
 
-.post-content p a:hover::before {
+.post-content p a:hover::before,
+.post-content li a:hover::before {
   bottom: 0;
   height: 110%;
   opacity: 1;
