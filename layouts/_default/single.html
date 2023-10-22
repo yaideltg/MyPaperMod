@@ -55,6 +55,12 @@
     {{- end }}
   </footer>
 
+  <footer>
+    {{- if (.Param "Backlinks") }}
+    {{- partial "backlinks.html" . }}
+    {{- end }}
+  </footer>
+  
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}

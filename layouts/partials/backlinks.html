@@ -1,0 +1,28 @@
+<!--This snippet has been taken from the Logseq-Schrodinger project at
+https://github.com/sawhney17/logseq-schrodinger. It basically takes the name of the current note, and searches
+for it in the content of all other notes in the blog (under the folder /content/posts in this case, set by
+"Type" "posts"). If it finds that there is another note with the name of this note's file on its body, it
+means that there is a backlink, and then it adds that note's link to the list $backlinks. Finally, the list of
+backlinks is printed wherever you want it to be.-->
+
+<!--Because I have a multilingual site, if I would use $re := .File.BaseFileName, it would result in $re being
+equal to test-post.en, for example. This is not desirable, because when we make a reference between posts, we
+don't include the language code of the notes. For this reason it is important to remove the language code from
+the nale of the note.-->
+{{- $re := replace .File.BaseFileName (printf ".%s" .File.Lang) "" -}}
+{{- $backlinks := slice -}}
+{{- range where .Site.RegularPages "Type" "posts" -}}
+{{- if and (findRE $re .RawContent) (not (eq $re .File.BaseFileName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
+{{- end -}}
+{{- if gt (len $backlinks) 0 -}}
+<aside>
+  <h1>Backlinks</h1>
+  <div class="backlinks">
+    <ul>
+      {{ range $backlinks }}
+      <li class="capitalize"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</aside>
+{{- end -}}
