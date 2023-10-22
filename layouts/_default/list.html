@@ -1,9 +1,6 @@
 {{- define "main" }}
 
-{{- if (and site.Params.profileMode.enabled .IsHome) }}
-{{- partial "index_profile.html" . }}
-{{- else }} {{/* if not profileMode */}}
-
+<!-- In case it is a list page of tags, categories, etc., but not the Home page -->
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
@@ -28,6 +25,7 @@
 </header>
 {{- end }}
 
+<!-- In case the list page was given any content to display -->
 {{- if .Content }}
 <div class="post-content">
   {{- if not (.Param "disableAnchoredHeadings") }}
@@ -35,6 +33,7 @@
   {{- else }}{{ .Content }}{{ end }}
 </div>
 {{- end }}
+
 
 {{- $pages := union .RegularPages .Sections }}
 
@@ -45,6 +44,7 @@
 
 {{- $paginator := .Paginate $pages }}
 
+<!-- This is where the welcome content of the home page is defined -->
 {{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{- partial "home_info.html" . }}
 {{- end }}
@@ -61,6 +61,7 @@
 {{- $class = "post-entry tag-entry" }}
 {{- end }}
 
+<!-- This is where the pagination takes shape -->
 <article class="{{ $class }}">
   {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
@@ -84,8 +85,9 @@
 </article>
 {{- end }}
 
+<!-- This formats the Next and Previous buttons of the pagination -->
 {{- if gt $paginator.TotalPages 1 }}
-<footer class="page-footer">
+<div class="page-footer">
   <nav class="pagination">
     {{- if $paginator.HasPrev }}
     <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
@@ -104,9 +106,7 @@
     </a>
     {{- end }}
   </nav>
-</footer>
+</div>
 {{- end }}
-
-{{- end }}{{/* end profileMode */}}
 
 {{- end }}{{- /* end main */ -}}

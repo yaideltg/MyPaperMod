@@ -20,4 +20,10 @@
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
 
+<footer class="backlinks-footer">
+  {{- if (.Param "Backlinks") }}
+  {{- partial "backlinks.html" . }}
+  {{- end }}
+</footer>
+
 </html>

@@ -9,20 +9,23 @@ backlinks is printed wherever you want it to be.-->
 equal to test-post.en, for example. This is not desirable, because when we make a reference between posts, we
 don't include the language code of the notes. For this reason it is important to remove the language code from
 the nale of the note.-->
-{{- $re := replace .File.BaseFileName (printf ".%s" .File.Lang) "" -}}
+{{ $re := "" }}
+{{ with .File }}
+{{- $re = .TranslationBaseName -}}
+{{ end }}
 {{- $backlinks := slice -}}
-{{- range where .Site.RegularPages "Type" "posts" -}}
+{{- range (where .Site.RegularPages "Section" "posts") -}}
 {{- if and (findRE $re .RawContent) (not (eq $re .File.BaseFileName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
 {{- end -}}
+{{ printf "%s" $re }}
+{{ printf "%s" $backlinks }}
 {{- if gt (len $backlinks) 0 -}}
-<aside>
-  <h1>Backlinks</h1>
-  <div class="backlinks">
-    <ul>
-      {{ range $backlinks }}
-      <li class="capitalize"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-      {{ end }}
-    </ul>
-  </div>
-</aside>
+<h1>Backlinks</h1>
+<div class="BackLinkDiv">
+  <ul id="BackLinkList">
+    {{ range $backlinks }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
 {{- end -}}

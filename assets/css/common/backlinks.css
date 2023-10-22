@@ -1,0 +1,17 @@
+.backlinks-footer {
+  background-color: #BEDDCF;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color: darkgreen;
+}
+
+#BackLinkList {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+#BackLinkList li {
+    color: white;
+}

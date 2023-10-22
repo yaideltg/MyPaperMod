@@ -40,7 +40,7 @@
   </div>
   {{- end }}
   
-  <footer class="post-footer">
+  <div class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
       {{- range ($.GetTerms $tags) }}
@@ -53,13 +53,7 @@
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}
-  </footer>
-
-  <footer>
-    {{- if (.Param "Backlinks") }}
-    {{- partial "backlinks.html" . }}
-    {{- end }}
-  </footer>
+  </div>
   
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
