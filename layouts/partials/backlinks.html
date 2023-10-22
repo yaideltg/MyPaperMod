@@ -9,17 +9,34 @@ backlinks is printed wherever you want it to be.-->
 equal to test-post.en, for example. This is not desirable, because when we make a reference between posts, we
 don't include the language code of the notes. For this reason it is important to remove the language code from
 the nale of the note.-->
+
+<!-- variable re gets the name of the current post -->
 {{ $re := "" }}
 {{ with .File }}
-{{- $re = .TranslationBaseName -}}
+<!-- If we are in a Leaf Bundle the "index" file means nothing for backlinking, therefore we need the ContentBaseName (see https://gohugo.io/variables/files/#examples) -->
+    {{ if (eq .TranslationBaseName "index") }}
+        {{ $re = .ContentBaseName }}
+<!-- I want to skip the Branch Bundle pages, as they are not made for content and will not have backlinks -->
+    {{ else if (eq .TranslationBaseName "_index") }}
+        {{ $re = "BranchBundle" }}
+<!-- Finally, if it is a regular content page, just take its translational name, without lang extension -->
+    {{ else }}
+        {{- $re = .TranslationBaseName -}}
+    {{ end }}
 {{ end }}
+
 {{- $backlinks := slice -}}
+{{ if (ne $re "BranchBundle") }}
 {{- range (where .Site.RegularPages "Section" "posts") -}}
-{{- if and (findRE $re .RawContent) (not (eq $re .File.BaseFileName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
+    {{ if (eq .File.TranslationBaseName "index") }}
+        {{- if and (findRE $re .RawContent) (not (eq $re .File.ContentBaseName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
+    {{ else }}
+        {{- if and (findRE $re .RawContent) (not (eq $re .File.TranslationBaseName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
+    {{ end }}
 {{- end -}}
-{{ printf "%s" $re }}
-{{ printf "%s" $backlinks }}
-{{- if gt (len $backlinks) 0 -}}
+{{- end -}}
+
+{{- if and (gt (len $backlinks) 0) (ne .Page.Kind "term") (ne .Page.Kind "taxonomy") -}}
 <h1>Backlinks</h1>
 <div class="BackLinkDiv">
   <ul id="BackLinkList">
