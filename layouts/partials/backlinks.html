@@ -26,8 +26,8 @@
 {{- end -}}
 
 {{- if gt (len $backlinks) 0 -}}
-<h1>Backlinks</h1>
-<div class="BackLinkDiv">
+<div>
+  <h1>Backlinks</h1>
   <ul id="BackLinkList">
     {{ range $backlinks }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>

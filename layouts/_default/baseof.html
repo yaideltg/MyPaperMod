@@ -13,17 +13,14 @@
 {{- print " dark" }}
 {{- end -}}
 " id="top">
-    {{- partialCached "header.html" . .Page -}}
-    <main class="main">
-        {{- block "main" . }}{{ end }}
-    </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+  {{- partialCached "header.html" . .Page -}}
+  <main class="main">
+    {{- block "main" . }}{{ end }}
+  </main>
 </body>
 
-<footer class="backlinks-footer">
-  {{- if (.Param "Backlinks") }}
-  {{- partial "backlinks.html" . }}
-  {{- end }}
+<footer class="footer">
+  {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </footer>
 
 </html>

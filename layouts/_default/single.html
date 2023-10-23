@@ -37,6 +37,10 @@
     <div style="text-align: center; padding: 20px;"> &#8903; &#8903; &#8903; &#8903; &#8903; </div>
     <p>{{ i18n "thanks" }} {{ (printf "<a href='mailto:contact@poview.org?subject=Re: %s'>contact@poview.org</a>" $title) | safeHTML }}</p>
     {{- end -}}
+
+    {{- if (.Param "Backlinks") -}}
+    {{- partial "backlinks.html" . -}}
+    {{- end -}}
   </div>
   {{- end }}
   
@@ -55,9 +59,9 @@
     {{- end }}
   </div>
   
-  {{- if (.Param "comments") }}
-  {{- partial "comments.html" . }}
-  {{- end }}
+  {{- if (.Param "comments") -}}
+  {{- partial "comments.html" . -}}
+  {{- end -}}
 </article>
 
 {{- end }}{{/* end main */}}
