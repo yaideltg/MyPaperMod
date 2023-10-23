@@ -1,15 +1,3 @@
-<!--This snippet has been taken from the Logseq-Schrodinger project at
-https://github.com/sawhney17/logseq-schrodinger. It basically takes the name of the current note, and searches
-for it in the content of all other notes in the blog (under the folder /content/posts in this case, set by
-"Type" "posts"). If it finds that there is another note with the name of this note's file on its body, it
-means that there is a backlink, and then it adds that note's link to the list $backlinks. Finally, the list of
-backlinks is printed wherever you want it to be.-->
-
-<!--Because I have a multilingual site, if I would use $re := .File.BaseFileName, it would result in $re being
-equal to test-post.en, for example. This is not desirable, because when we make a reference between posts, we
-don't include the language code of the notes. For this reason it is important to remove the language code from
-the nale of the note.-->
-
 <!-- variable re gets the name of the current post -->
 {{ $re := "" }}
 {{ with .File }}
@@ -26,7 +14,8 @@ the nale of the note.-->
 {{ end }}
 
 {{- $backlinks := slice -}}
-{{ if (ne $re "BranchBundle") }}
+<!-- I don't want the backlinks to be searched neither for Branch Bundles, nor for other pages which are not posts -->
+{{ if and (ne $re "BranchBundle") (eq .Page.Section "posts") }}
 {{- range (where .Site.RegularPages "Section" "posts") -}}
     {{ if (eq .File.TranslationBaseName "index") }}
         {{- if and (findRE $re .RawContent) (not (eq $re .File.ContentBaseName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
@@ -36,7 +25,7 @@ the nale of the note.-->
 {{- end -}}
 {{- end -}}
 
-{{- if and (gt (len $backlinks) 0) (ne .Page.Kind "term") (ne .Page.Kind "taxonomy") -}}
+{{- if gt (len $backlinks) 0 -}}
 <h1>Backlinks</h1>
 <div class="BackLinkDiv">
   <ul id="BackLinkList">
