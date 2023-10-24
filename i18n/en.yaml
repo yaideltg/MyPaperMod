@@ -39,4 +39,7 @@
   translation: "Legal Information"
 
 - id: thanks
-  translation: "Thanks for reading the post! Do not hesitate to write me an email and share your point of view or ask any question (this way we both improve): "
+  translation: "Thanks for reading the post! Do not hesitate to write me an email, and share your point of view 😉: "
+
+- id: backlinks
+  translation: "Backlinks redirects you to other posts mentioning this one you are in. Just like in Obsidian, Logseq, etc."

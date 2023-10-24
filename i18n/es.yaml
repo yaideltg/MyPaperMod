@@ -39,5 +39,7 @@
   translation: "Información Legal"
 
 - id: thanks
-  translation: "Gracias por leer el post. No dudes en enviarme un correo para cualquier comentario o pregunta que tengas (así ambos mejoramos): "
+  translation: "Gracias por leer el post. No dudes en enviarme un correo para cualquier comentario, o para compartir tu punto de vista 😉: "
 
+- id: backlinks
+  translation: "Los backlinks hacen referencia a otros posts del blog que mencionan a este. Justo como hacen Obsidian, Logseq, etc."
