@@ -1,5 +1,9 @@
+<div>
+  {{ partial "social_icons.html" site.Params.socialIcons }}
+</div>
+
 {{- if not (.Param "hideFooter") }}
-<div class="footer">
+<div>
   <p>
     Copyright &copy;
     {{ dateFormat "2006" "2023-01-10" }}-{{ dateFormat "2006" now }}
@@ -10,6 +14,7 @@
   </p>
 </div>
 {{- end }}
+
 
 {{- if (not site.Params.disableScrollToTop) }}
 <a href="#top" aria-label="go to top" title="Go to Top" class="top-link" id="top-link">

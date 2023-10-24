@@ -25,14 +25,7 @@
 </header>
 {{- end }}
 
-<!-- In case the list page was given any content to display -->
-{{- if .Content }}
-<div class="post-content">
-  {{- if not (.Param "disableAnchoredHeadings") }}
-  {{- partial "anchored_headings.html" .Content -}}
-  {{- else }}{{ .Content }}{{ end }}
-</div>
-{{- end }}
+
 
 
 {{- $pages := union .RegularPages .Sections }}
@@ -44,23 +37,23 @@
 
 {{- $paginator := .Paginate $pages }}
 
-<!-- This is where the welcome content of the home page is defined -->
-{{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-{{- partial "home_info.html" . }}
+
+<!-- In case the list page was given any content to display -->
+{{- if and .Content .IsHome (eq $paginator.PageNumber 1) }}
+<div class="post-content" style="margin-top: 10%;">
+  <!-- {{- if not (.Param "disableAnchoredHeadings") }} -->
+  <!-- {{- partial "anchored_headings.html" .Content -}} -->
+  <!-- {{- else }}{{ .Content }}{{ end }} -->
+  {{ .Content }}
+</div>
 {{- end }}
+
+
 
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
 
 {{- $class := "post-entry" }}
-
-{{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
-{{- $class = "first-entry" }}
-{{- else if $term }}
-{{- $class = "post-entry tag-entry" }}
-{{- end }}
-
 <!-- This is where the pagination takes shape -->
 <article class="{{ $class }}">
   {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
