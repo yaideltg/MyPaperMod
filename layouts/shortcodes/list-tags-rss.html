@@ -1,0 +1,5 @@
+<ul>
+{{range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+<li style="display: inline; padding: 1%;"><a href="{{.Permalink}}index.xml">{{.Title | humanize }}</a></li>
+{{end}}
+</ul>
