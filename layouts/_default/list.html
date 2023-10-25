@@ -26,8 +26,7 @@
 {{- end }}
 
 
-
-
+<!-- Pagination -->
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
@@ -46,12 +45,19 @@
   <!-- {{- else }}{{ .Content }}{{ end }} -->
   {{ .Content }}
 </div>
+{{- else if and .Content (not .IsHome) }}
+<div class="post-content">
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
+</div>
 {{- end }}
-
 
 
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
+
+
 
 {{- $class := "post-entry" }}
 <!-- This is where the pagination takes shape -->
