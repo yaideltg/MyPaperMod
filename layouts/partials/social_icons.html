@@ -1,7 +1,14 @@
 <div class="social-icons">
-    {{- range . }}
-    <a href="{{ trim .url " " }}" rel="noopener noreferrer me" title="{{ (.title | default .name) | title }}">
-        {{ partial "svg.html" . }}
-    </a>
-    {{- end }}
+  {{- $re := "" }}
+  {{- range . }}
+  {{- if (findRE "http" .url) }}
+     {{- $re = .url }}
+  {{- else }}
+     {{- $re = absLangURL .url }}
+  {{- end }}
+  <!-- {{- printf "%s" $re }} -->
+  <a href="{{ $re }}" rel="noopener noreferrer me" title="{{ (.title | default .name) | title }}">
+    {{ partial "svg.html" . }}
+  </a>
+  {{- end }}
 </div>
