@@ -43,3 +43,8 @@
 
 - id: backlinks
   translation: "Backlinks redirects you to other posts mentioning this one you are in. Just like in Obsidian, Logseq, etc."
+
+- id: now-archive
+  translation: "Now pages archives"
+
+
