@@ -16,7 +16,7 @@
 
 <!-- Prints the content of the last post, which is the really now. Belowe the archives of Now posts -->
 {{- range first 1 ($pages.ByDate.Reverse) }}
-<header class="page-header" style="margin-top: 5%;">
+<header class="post-content" style="margin-top: 5%;">
 <h1>
   {{ .Title }}
   {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
@@ -29,6 +29,9 @@
   {{- else }}
   {{ .Content }}
   {{- end }}
+  {{- if (.Param "Backlinks") -}}
+  {{- partial "backlinks.html" . -}}
+  {{- end -}}
 </div>
 {{- end }}
 {{- end }}
