@@ -133,22 +133,17 @@
 /* Links decoration in the posts */
 .post-content p a,
 .post-content li a {
-    text-decoration : none;
-    /* line-height     : 25px; */
-    transition                : all .3s ease-in-out;
-    text-decoration           : underline;
-    text-decoration-color     : hsla(196,61%,58%,0.25);
-    text-decoration-thickness : 8px;
-    text-decoration-skip-ink  : none;
-    text-underline-offset     : -25%;
-    display                   : inline-block;
+    background-image    : linear-gradient(to top, hsla(196,61%,58%,0.25), hsla(196,61%,58%,0.25));
+    background-size     : 100% 50%;
+    background-repeat   : no-repeat;
+    background-position : bottom center;
+    transition          : all .3s ease-in-out;
 }
 
 .post-content p a:hover,
 .post-content li a:hover {
-    text-decoration-color     : hsla(196,61%,58%,0.75);
-    text-decoration-thickness : 25px;
-    text-underline-offset     : -18px;
+    background-size  : 100% 110%;
+    background-image : linear-gradient(to top, hsla(196,61%,58%,0.75), hsla(196,61%,58%,0.75));
 }
 /* Links decoration in the posts - END */
 
