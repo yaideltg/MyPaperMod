@@ -15,8 +15,10 @@
 
 {{- $backlinks := slice -}}
 <!-- I don't want the backlinks to be searched neither for Branch Bundles, nor for other pages which are not posts -->
-{{ if and (ne $re "BranchBundle") (eq .Page.Section "posts") }}
-{{- range (where .Site.RegularPages "Section" "posts") -}}
+{{ if and (ne $re "BranchBundle") (or (eq .Page.Section "posts") (eq .Page.Section "now")) }}
+{{ $p := where .Site.RegularPages "Section" "now" }}
+{{ $p  = $p | append (where .Site.RegularPages "Section" "posts") }}
+{{- range $p -}}
     {{ if (eq .File.TranslationBaseName "index") }}
         {{- if and (findRE $re .RawContent) (not (eq $re .File.ContentBaseName)) -}} {{ $backlinks = $backlinks | append . }} {{- end -}}
     {{ else }}
