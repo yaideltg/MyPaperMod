@@ -2,12 +2,14 @@
 
 <!-- Includes the content of the _index page in the NOW section -->
 {{- if .Content }}
-<div class="post-content" style="margin-top: 5%;">
+<div class="post-content" style="margin-top: 8%;">
+  <hr>
   {{- if not (.Param "disableAnchoredHeadings") }}
   {{- partial "anchored_headings.html" .Content -}}
   {{- else }}
   {{ .Content }}
   {{- end }}
+  <hr>
 </div>
 {{- end }}
 
@@ -16,7 +18,7 @@
 
 <!-- Prints the content of the last post, which is the really now. Belowe the archives of Now posts -->
 {{- range first 1 ($pages.ByDate.Reverse) }}
-<header class="post-content" style="margin-top: 5%;">
+<header class="post-content" style="margin-top: 12%;">
 <h1>
   {{ .Title }}
   {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
@@ -40,7 +42,8 @@
 {{- range $pages.GroupByPublishDate "2006" }}
 <!-- Check if there is any entry, if there isn't we don't need to print the Archive -->
 {{- if and (ne .Key "0001") (gt (len $pages) 1) }}
-<div class="post-content" style="margin-top: 10%;">
+<div class="post-content" style="margin-top: 15%;">
+  <hr>
   <h2>{{ i18n "now-archive" }}</h2>
 </div>
 <div class="archive-year">
