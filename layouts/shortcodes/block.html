@@ -1,0 +1,11 @@
+{{ if .Inner }}
+   {{ $c := "gray" }}
+   {{ $a := "left" }}
+   {{ if .Get "color" }} {{ $c = .Get "color" }} {{ end }}
+   {{ if .Get "align" }} {{ $a = .Get "align" }} {{ end }}
+<p style="text-align: {{ $a }}; padding: 10px 10px 10px 25px; border: 2px solid {{ $c }}; border-radius: 5px;; border-left: 6px solid {{ $c }};">
+{{ .Inner | markdownify }}
+</p>
+{{ else }}
+   {{ errorf "missing content in block shortcode: %s" .Position }}
+{{ end }}
