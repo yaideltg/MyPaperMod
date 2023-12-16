@@ -5,6 +5,12 @@
     padding-bottom: calc(var(--gap)*3);
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .shadowed-box {
     background-color: var(--entry);
     border-radius: 16px;
@@ -18,7 +24,7 @@
 }
 
 .column {
-    float: left;
+    float: left;       
 }
 
 .left {
@@ -32,12 +38,24 @@
     padding-left: 5%;
 }
 
+
+#avatar img {
+    border-radius: 50%;
+}
+
+#list-of-posts-left {
+    width: 70%;
+    padding: 10px;
+}
+
+#list-of-posts-right {
+    width: 30%;
+    font-size: 14px;
+    padding: 10px;
+}
+
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
-
-#avatar img {
-    border-radius: 50%;
 }

@@ -34,6 +34,9 @@
     .responsive-content {
         max-width: calc(var(--main-width) + 10%);
     }
+}
+
+@media screen and (max-width: 1300px) {
     .row {
         display: block;
     }
@@ -56,12 +59,20 @@
     .responsive-content {
         max-width: calc(var(--main-width) + 20%);
     }
+    #list-of-posts-left {
+        width: 100%;
+        padding-bottom: 0;
+    }
+    #list-of-posts-right {
+        width: 100%;
+        padding-top: 0;
+    }
 }
 
 @media screen and (max-width: 900px) {
     .responsive-content {
         max-width: 75%;
-    }
+    }    
 }
 
 @media screen and (max-width: 700px) {
