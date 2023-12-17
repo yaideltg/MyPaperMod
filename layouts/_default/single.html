@@ -3,7 +3,7 @@
 <div class="responsive-content" style="max-width: calc(var(--main-width) + 5%);">
 <article class="post-single">
   <header class="post-header">
-    {{ partial "breadcrumbs.html" . }}
+    <!-- {{ partial "breadcrumbs.html" . }} -->
     <h1 class="post-title">
       {{ .Title }}
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
@@ -30,7 +30,7 @@
 
   {{- if .Content }}
   {{- $title := htmlEscape .Title -}}
-  <div class="post-content">
+  <div class="post-content" style="margin-top: 100px;">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}

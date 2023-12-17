@@ -22,11 +22,11 @@ h6 {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: georgia, palatino, -apple-system, BlinkMacSystemFont, serif;
     font-size: 18px;
     line-height: 1.6;
     word-break: break-word;
-    background: var(--theme);
+    background: var(--background);
 }
 
 article,
