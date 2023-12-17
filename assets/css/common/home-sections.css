@@ -52,6 +52,11 @@
     padding: 10px;
 }
 
+#nletter-paragraph {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 .row:after {
   content: "";
   display: table;
