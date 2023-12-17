@@ -42,6 +42,7 @@
     }
     .column {
         width: 100%;
+        margin-left: auto;
     }
     #avatar {
         max-width: 350px;

@@ -28,18 +28,19 @@
 }
 
 .left {
-    width: 30%;
+    width: 40%;
     padding: 2%;
 }
 
 .right {
-    width: 70%;
+    width: 60%;
     padding: 2%;
     padding-left: 5%;
 }
 
 
 #avatar img {
+    max-width: 90%;
     border-radius: 50%;
 }
 
