@@ -44,5 +44,24 @@
 - id: backlinks
   translation: "Los backlinks hacen referencia a otros posts del blog que mencionan a este. Justo como hacen Obsidian, Logseq, etc."
 
-- id: now-archive
-  translation: "Archivo de páginas Now"
+- id: me
+  translation: "Mi"
+
+- id: about
+  translation: "Acerca de"
+
+- id: project
+  translatione: "Este proyecto"
+
+- id: archives
+  translation: "Archivos"
+
+- id: search
+  translation: "Buscar"
+
+- id: tags
+  translation: "Etiquetas"
+
+- id: categories
+  translation: "Categorías"
+

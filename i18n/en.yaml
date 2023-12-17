@@ -44,7 +44,24 @@
 - id: backlinks
   translation: "Backlinks redirects you to other posts mentioning this one you are in. Just like in Obsidian, Logseq, etc."
 
-- id: now-archive
-  translation: "Now pages archives"
+- id: me
+  translation: "Me"
 
+- id: about
+  translation: "About"
+
+- id: project
+  translation: "This project"
+
+- id: archives
+  translation: "Archives"
+
+- id: search
+  translation: "Search"
+
+- id: tags
+  translation: "Tags"
+
+- id: categories
+  translation: "Categories"
 
