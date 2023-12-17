@@ -42,7 +42,7 @@
 
 <!-- In case the list page was given any content to display -->
 {{- if and .Content .IsHome (eq $paginator.PageNumber 1) }}
-<div class="post-content" style="margin-top: 10%;">
+<div class="post-content">
   <!-- {{- if not (.Param "disableAnchoredHeadings") }} -->
   <!-- {{- partial "anchored_headings.html" .Content -}} -->
   <!-- {{- else }}{{ .Content }}{{ end }} -->
