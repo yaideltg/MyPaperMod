@@ -1,9 +1,53 @@
-<div>
-  {{ partial "social_icons.html" site.Params.socialIcons }}
+<div class="responsive-content" style="max-width: calc(var(--main-width) + 30%);">
+  <div class="row" id="footer-row">
+    <div class="column" id="footer-col1">
+      <a href='{{ "/" | absLangURL }}' id="logo-footer">
+        <div class="row">
+          <div class="column" style="width: 25%;">
+            <img src="/mstile-144x144.png" style="max-width: 60px; float: right;">
+          </div>
+          <div class="column" style="width: 75%;">
+            <img src="/images/pointofview.png" style="max-width: 260px;">
+          </div>
+        </div>
+      </a>
+      <div id="paragraph">
+        <p>Un lugar donde se habla, o al menos se intenta, del arte y las cosas hermosas de la vida… de las vidas. Lo complejo se deja fuera por odioso. La sencillez de la imaginación es bienvenida.</p>
+      </div>
+    </div>
+    <div class="column" id="footer-col2">
+      <h3>Acerca de</h3>
+      <ul class="plain-list">
+        <li><a href='{{ "/about" | absLangURL }}'>Mi</a></li>
+        <!-- <li><a href='{{ "" | absLangURL }}'></a>Este proyecto</li> -->
+      </ul>
+    </div>
+    <div class="column" id="footer-col3">
+      <h3>Links</h3>
+      <ul class="plain-list">
+        <li><a href='{{ "/archives" | absLangURL }}'>Archivo</a></li>
+        <li><a href='{{ "/search" | absLangURL }}'>Buscar</a></li>
+        <li><a href='{{ "/tags" | absLangURL }}'>Etiquetas</a></li>
+        <li><a href='{{ "/categories" | absLangURL }}'>Categorías</a></li>
+        <li><a href='{{ "/rss" | absLangURL }}'>RSS</a></li>
+      </ul>
+    </div>
+    <div class="column" id="footer-col4">
+      <h3>Social</h3>
+      <ul class="plain-list">
+        <li><a href=''>Instagram</a></li>
+        <li><a href='https://mastodon.social/@yaideltg'>Mastodon</a></li>
+        <li><a href='https://yaidel.substack.com'>Substack</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-{{- if not (.Param "hideFooter") }}
-<div>
+<!-- <div> -->
+<!--   {{ partial "social_icons.html" site.Params.socialIcons }} -->
+<!-- </div> -->
+
+<div id="footer-legal">
   <p>
     Copyright &copy;
     {{ dateFormat "2006" "2023-01-10" }}-{{ dateFormat "2006" now }}
@@ -13,7 +57,6 @@
     {{ i18n "license-more" }} <a href='{{ "/legal" | absLangURL}}'> {{ i18n "license"}}</a>.
   </p>
 </div>
-{{- end }}
 
 
 {{- if (not site.Params.disableScrollToTop) }}
