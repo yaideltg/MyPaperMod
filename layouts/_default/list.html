@@ -1,6 +1,9 @@
 {{- define "main" }}
 
-<!-- In case it is a list page of tags, categories, etc., but not the Home page -->
+{{- if not .IsHome -}}{{- /* Needed to be able to hand craft the home page without restrictions */ -}}
+<div class="responsive-content">
+{{- end -}}
+<!-- In case it is a list page of tags, categories, etc., but not the Home page, show the corresponding posts and RSS -->
 {{- if not .IsHome | and .Title }}
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
@@ -54,10 +57,10 @@
 {{- end }}
 
 
+{{- if not .IsHome -}}
+
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
-
-
 
 {{- $class := "post-entry" }}
 <!-- This is where the pagination takes shape -->
@@ -106,6 +109,10 @@
     {{- end }}
   </nav>
 </div>
-{{- end }}
+{{- end }}{{- /* end range cycle */ -}}
+{{- end -}}{{- /* end if not .IsHome */ -}}
 
+{{- if not .IsHome -}}{{- /* Needed to be able to hand craft the home page without restrictions */ -}}
+</div>
+{{- end -}}{{- /* Needed to be able to hand craft the home page without restrictions */ -}}
 {{- end }}{{- /* end main */ -}}

@@ -1,5 +1,6 @@
 {{- define "main" }}
 
+<div class="responsive-content" style="max-width: calc(var(--main-width) + 5%);">
 <article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
@@ -63,5 +64,5 @@
   {{- partial "comments.html" . -}}
   {{- end -}}
 </article>
-
+</div>
 {{- end }}{{/* end main */}}
