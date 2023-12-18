@@ -33,7 +33,7 @@
   translation: "¡Copiado!"
 
 - id: license-more
-  translation: "Lea más acerca de la Licencia del sitio y todo su contenido asociado en "
+  translation: "Lea más acerca de la Licencia, Privacidad y Términos de Uso en"
 
 - id: license
   translation: "Información Legal"
@@ -42,7 +42,7 @@
   translation: "Gracias por leer el post. No dudes en enviarme un correo para cualquier comentario, o para compartir tu punto de vista 😉: "
 
 - id: backlinks
-  translation: "Los backlinks hacen referencia a otros posts del blog que mencionan a este. Justo como hacen Obsidian, Logseq, etc."
+  translation: "Una lista de otras publicaciones que hacen mención de esta."
 
 - id: me
   translation: "Mi"
