@@ -17,11 +17,6 @@
     .archive-year {
         margin-top: 20px;
     }
-
-    /* footer */
-    .footer {
-        padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
-    }
 }
 
 @media screen and (max-width: 1700px) {
@@ -51,7 +46,6 @@
     #footer-col3,
     #footer-col4 {
         width: 30%;
-        margin-left: 0;
         margin-top: 30px;
     }
     #footer-col2 {
@@ -91,11 +85,20 @@
     .responsive-content {
         max-width: 75%;
     }
+     #footer-col2 {
+        margin-left: 0px;
+    }
 }
 
 @media screen and (max-width: 700px) {
     .responsive-content {
         max-width: 90%;
+    }
+    #boxTo90percent {
+        max-width: 95%;
+    }
+    #boxTo90percent p {
+        font-size: calc(var(--baseContentFontSize) - 0px);
     }
 }
 

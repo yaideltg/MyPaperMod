@@ -17,6 +17,14 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#boxTo90percent {
+    max-width: calc(var(--main-width) + 30%);
+}
+
+#post-content-width {
+    max-width: calc(var(--main-width) + 5%);
+}
+
 .row {
     display: flex;
 }

@@ -113,7 +113,12 @@
 <meta name="theme-color" content="#ffffff">
 
 {{- /* TRACKING WITH UMAMI */}}
-<script async data-domains="poview.org" src="https://umami.poview.org/script.js" data-website-id="e0b017ad-940d-425c-a73d-d04f4b4b9799"></script>
+<script async src="https://umami.poview.org/script.js" data-website-id="e0b017ad-940d-425c-a73d-d04f4b4b9799"></script>
+<script>
+  function pushEventToUmami(eventName) {
+    umami.track(eventName);
+  }
+</script>
 
 {{- /* RSS */}}
 {{ range .AlternativeOutputFormats -}}
