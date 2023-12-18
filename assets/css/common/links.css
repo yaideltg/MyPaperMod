@@ -1,8 +1,10 @@
 /* Link decoration of the Translations */
+.linkPass a,
 .i18n_list li a {
-  position: relative;
+    position: relative;
 }
 
+.linkPass a::before,
 .i18n_list li a::before {
     content: '';
     position: absolute;
@@ -17,6 +19,7 @@
     transition: transform .3s ease-in-out;
   }
 
+.linkPass a:hover::before,
 .i18n_list li a:hover::before {
   transform-origin: left;
   transform: scaleX(1);

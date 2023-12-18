@@ -6,11 +6,18 @@
 
 .backlinks {
     background: var(--code-bg);
-    padding: 5px 35px 35px 35px;
+    padding: 35px 45px 35px 45px;
     margin: 80px 0 80px 0;
 }
 
-.backlinks ul li {
-    margin: 0px;
+.backlinks ol,
+.backlinks ul {
+    margin-top: 30px;
+    padding-inline-start: 40px;
 }
+
+.backlinks li {
+    margin-top: 0px;
+}
+
 

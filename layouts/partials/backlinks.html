@@ -28,10 +28,10 @@
 {{- end -}}
 
 {{- if gt (len $backlinks) 0 -}}
-<div class="backlinks shadowed-box">
-  <h2 style="margin-bottom: 0; margin-top: 5%;">Backlinks</h2>
+<div class="backlinks shadowed-box linkPass">
+  <h2 style="margin-bottom: 0;"><mark>Backlinks</mark></h2>
   <p>{{ i18n "backlinks" }}</p>
-  <ul id="BackLinkList">
+  <ul>
     {{ range $backlinks }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
