@@ -27,6 +27,9 @@
       <hr style="border-top: 1px; width: 20px; float: left;">
       <ul class="plain-list">
         <li><a href='{{ "/about" | absLangURL }}'>{{ i18n "me" }}</a></li>
+        {{- with .Site.GetPage "/posts/i-ll-read-it" -}}
+        <li><a href='{{ .RelPermalink | absLangURL }}'>I'll read it!</a></li>
+        {{- end -}}
         <!-- <li><a href='{{ "" | absLangURL }}'></a>{{ i18n "project" }}</li> -->
       </ul>
     </div>
