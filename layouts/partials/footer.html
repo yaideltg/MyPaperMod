@@ -26,9 +26,9 @@
       <h3>{{ i18n "about" }}</h3>
       <hr style="border-top: 1px; width: 20px; float: left;">
       <ul class="plain-list">
-        <li><a href='{{ "/about" | absLangURL }}'>{{ i18n "me" }}</a></li>
+        <li><a href='{{ "/about" | absLangURL }}' data-umami-event="AboutMe-link">{{ i18n "me" }}</a></li>
         {{- with .Site.GetPage "/posts/i-ll-read-it" -}}
-        <li><a href='{{ .RelPermalink | absLangURL }}'>I'll read it!</a></li>
+        <li><a href='{{ .RelPermalink | absLangURL }}' data-umami-event="IllReadIt-link">I'll read it!</a></li>
         {{- end -}}
         <!-- <li><a href='{{ "" | absLangURL }}'></a>{{ i18n "project" }}</li> -->
       </ul>
@@ -37,20 +37,20 @@
       <h3>Links</h3>
       <hr style="border-top: 1px; width: 20px; float: left;">
       <ul class="plain-list">
-        <li><a href='{{ "/archives" | absLangURL }}'>{{ i18n "archives" }}</a></li>
-        <li><a href='{{ "/search" | absLangURL }}'>{{ i18n "search" }}</a></li>
-        <li><a href='{{ "/tags" | absLangURL }}'>{{ i18n "tags" }}</a></li>
-        <li><a href='{{ "/categories" | absLangURL }}'>{{ i18n "categories" }}</a></li>
-        <li><a href='{{ "/rss" | absLangURL }}'>RSS</a></li>
+        <li><a href='{{ "/archives" | absLangURL }}' data-umami-event="Archives-link">{{ i18n "archives" }}</a></li>
+        <li><a href='{{ "/search" | absLangURL }}' data-umami-event="Search-link">{{ i18n "search" }}</a></li>
+        <li><a href='{{ "/tags" | absLangURL }}' data-umami-event="Tags-link">{{ i18n "tags" }}</a></li>
+        <li><a href='{{ "/categories" | absLangURL }}' data-umami-event="Categories-link">{{ i18n "categories" }}</a></li>
+        <li><a href='{{ "/rss" | absLangURL }}' data-umami-event="RSS-link">RSS</a></li>
       </ul>
     </div>
     <div class="column" id="footer-col4">
       <h3>Social</h3>
       <hr style="border-top: 1px; width: 20px; float: left;">
       <ul class="plain-list">
-        <li><a href='https://instagram.com/yaideltg' target="_blank">Instagram</a></li>
-        <li><a href='https://mastodon.social/@yaideltg' target="_blank">Mastodon</a></li>
-        <li><a href='https://yaidel.substack.com' target="_blank">Substack</a></li>
+        <li><a href='https://instagram.com/yaideltg' target="_blank" data-umami-event="Instagram-link">Instagram</a></li>
+        <li><a href='https://mastodon.social/@yaideltg' target="_blank" data-umami-event="Mastodon-link">Mastodon</a></li>
+        <li><a href='https://yaidel.substack.com' target="_blank" data-umami-event="Susbtack-link">Substack</a></li>
       </ul>
     </div>
   </div>
