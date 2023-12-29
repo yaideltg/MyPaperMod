@@ -100,6 +100,9 @@
     #boxTo90percent p {
         font-size: calc(var(--baseContentFontSize) - 0px);
     }
+    #povText {
+        max-width: 200px;
+    }
 }
 
 
