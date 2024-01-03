@@ -27,10 +27,10 @@
       <hr style="border-top: 1px; width: 20px; float: left;">
       <ul class="plain-list">
         <li><a href='{{ "/about" | absLangURL }}' data-umami-event="AboutMe-link">{{ i18n "me" }}</a></li>
-        {{- with .Site.GetPage "/posts/i-ll-read-it" -}}
-        <li><a href='{{ .RelPermalink | absLangURL }}' data-umami-event="IllReadIt-link">I'll read it!</a></li>
-        {{- end -}}
-        <!-- <li><a href='{{ "" | absLangURL }}'></a>{{ i18n "project" }}</li> -->
+        <!-- {{- with .Site.GetPage "/posts/i-ll-read-it" -}} -->
+        <!-- <li><a href='{{ .RelPermalink | absLangURL }}' data-umami-event="IllReadIt-link">I'll read it!</a></li> -->
+        <!-- {{- end -}} -->
+        <li><a href='{{ "/everythin-else" | absLangURL }}' data-umami-event="EverythingElse-link">{{ i18n "EvElse" }}</a></li>
       </ul>
     </div>
     <div class="column" id="footer-col3">

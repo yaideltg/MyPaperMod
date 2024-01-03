@@ -65,3 +65,5 @@
 - id: categories
   translation: "Categories"
 
+- id: EvElse
+  translation: "Everything else"
