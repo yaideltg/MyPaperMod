@@ -14,14 +14,16 @@
 <figure {{ with .Get "class" }}class="{{.}}"{{ end -}}
 	{{ with .Get "width" }} style="width: {{.}};"{{ end -}}
 	>
-  
+
+  {{- $img := $.Page.Resources.GetMatch (.Get "src") -}}
+
   {{- if (.Get "link") -}}
   {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
     {{ else }}
-    {{ with .Get "src" }}<a target="_blank" href="{{.}}">{{ end }}
+    <a target="_blank" href="{{ $img.Permalink }}">
       {{ end -}}
-      
-      <img src="{{ .Get "src" }}"
+
+      <img src="{{ $img.Permalink }}"
 	   {{- if or (.Get "alt") (.Get "caption") }}
 	   alt="{{ with .Get "alt" }}{{ . }}
 				  {{ else }}
