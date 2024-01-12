@@ -35,8 +35,10 @@
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
     {{- if (eq .Section "posts") -}}
-    <div style="text-align: center; padding: 20px;"> &#8903; &#8903; &#8903; &#8903; &#8903; </div>
-    <p>{{ i18n "thanks" }} {{ (printf "<a href='mailto:contact@poview.org?subject=Re: %s'>contact@poview.org</a>" $title) | safeHTML }}</p>
+    <div style="padding-top: 10vh; padding-bottom: 2vh;">
+      <div style="text-align: center; padding: 20px;"> &#8903; &#8903; &#8903; &#8903; &#8903; </div>
+      <p>{{ i18n "thanks" }} {{ (printf "<a href='mailto:contact@poview.org?subject=Re: %s'>contact@poview.org</a>" $title) | safeHTML }}</p>
+    </div>
     {{- end -}}
   </div>
   {{- if (.Param "Backlinks") -}}
