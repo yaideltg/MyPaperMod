@@ -3,7 +3,7 @@
    {{ $a := "left" }}
    {{ if .Get "color" }} {{ $c = .Get "color" }} {{ end }}
    {{ if .Get "align" }} {{ $a = .Get "align" }} {{ end }}
-<p style="text-align: {{ $a }}; padding: 10px 10px 10px 25px; border: 2px solid {{ $c }}; border-radius: 5px;; border-left: 6px solid {{ $c }};">
+<p style="text-align: {{ $a }}; padding: 10px 10px 10px 25px; border: 2px solid {{ $c }}; border-radius: 5px; border-left: 6px solid {{ $c }}; background-color: {{ $c }}10;" class="shadowed-box">
 {{ .Inner | markdownify }}
 </p>
 {{ else }}
