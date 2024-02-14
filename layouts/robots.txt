@@ -5,7 +5,7 @@ Disallow: /rss/
 Disallow: /es/rss/
 Disallow: /legal/
 Disallow: /es/legal/
-Disallow: 404.html
+Disallow: /404.html
 Disallow: /es/404.html
 Disallow: /tags/
 Disallow: /es/tags/
