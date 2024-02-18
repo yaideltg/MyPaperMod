@@ -8,6 +8,7 @@
     width:   width of the figure's frame (the figures is 100% of the frame) (default: 100%)
     link:    url the image directs to
     mouse:   hat the image says when moused over ("title" in HTML)
+    target:  adds the target property in case you provided a link. You can set it to "_blank", for example.
 -->
 
 <!-- Image -->
@@ -18,8 +19,12 @@
   {{- $img := $.Page.Resources.GetMatch (.Get "src") -}}
 
   {{- if (.Get "link") -}}
-  {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
-    {{ else }}
+    {{- if (.Get "target") -}}
+      <a target="{{ (.Get "target") }}" href="{{ (.Get "link") }}">
+    {{- else -}}
+      {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
+    {{- end -}}  
+  {{ else }}
     <a target="_blank" href="{{ $img.Permalink }}">
       {{ end -}}
 

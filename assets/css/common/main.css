@@ -5,6 +5,14 @@
     margin: auto;
 }
 
+/* Selected text color */
+::-moz-selection { /* Code for Firefox */
+    background: #F4FA5850;
+}
+::selection {
+    background: #F4FA5850;
+}
+
 .page-header h1 {
     font-size: 40px;
 }
