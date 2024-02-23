@@ -30,6 +30,7 @@
         <!-- {{- with .Site.GetPage "/posts/i-ll-read-it" -}} -->
         <!-- <li><a href='{{ .RelPermalink | absLangURL }}' data-umami-event="IllReadIt-link">I'll read it!</a></li> -->
         <!-- {{- end -}} -->
+        <li><a href='{{ "/donate" | absLangURL }}' data-umami-event="Donate-link">{{ i18n "Donate" }}</a></li>
         <li><a href='{{ "/everythin-else" | absLangURL }}' data-umami-event="EverythingElse-link">{{ i18n "EvElse" }}</a></li>
       </ul>
     </div>

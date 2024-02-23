@@ -67,3 +67,6 @@
 
 - id: EvElse
   translation: "Everything else"
+
+- id: Donate
+  translation: "Supporting me"
