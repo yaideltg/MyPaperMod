@@ -12,7 +12,100 @@ Disallow: /es/tags/
 Disallow: /categories/
 Disallow: /es/categories/
 
-{{ range where .Site.Pages "Params.robotsdisallow" true }}
+# OpenAI
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /
+
+# Google AI
+User-agent: Google-Extended
+Disallow: /
+
+# Google
+User-agent: GoogleOther
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: AdsBot-Google
+Disallow: /
+
+# Omgili
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+# Facebook AI
+User-agent: FacebookBot
+Disallow: /
+
+# Other AI training
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# BigTech Bots
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+# Turn It In Plagiarism Checker
+User-agent: TurnitinBot
+Disallow: /
+
+# Name Protect
+User-agent: NPBot
+Disallow: /
+
+# Sly Search
+User-agent: SlySearch
+Disallow: /
+
+# Miscellaneous
+User-agent: The Knowledge AI
+Disallow: /
+
+User-agent: 360Spider
+Disallow: /
+
+User-agent: aiHitBot
+Disallow: /
+
+User-agent: netEstate NE Crawler
+Disallow: /
+
+User-agent: Pinterestbot
+Disallow: /
+
+{{- range where .Site.Pages "Params.robotsdisallow" true -}}
 Disallow: {{ .RelPermalink }}
 {{- if .IsTranslated -}}
 {{- range $trans := .Translations -}}

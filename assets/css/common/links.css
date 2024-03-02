@@ -65,17 +65,22 @@
 /* Links decoration in the posts */
 .post-content p a,
 .post-content li a {
+  text-decoration: none;
+}
+
+.post-content p a,
+.post-content li a {
     background-image    : linear-gradient(to top, hsla(196,61%,58%,0.25), hsla(196,61%,58%,0.25));
     background-size     : 100% 50%;
     background-repeat   : no-repeat;
-    background-position : bottom center;
+    background-position : center bottom;
     transition          : all .3s ease-in-out;
 }
 
 .post-content p a:hover,
 .post-content li a:hover {
-    background-size  : 100% 110%;
-    background-image : linear-gradient(to top, hsla(196,61%,58%,0.75), hsla(196,61%,58%,0.75));
+    background-size  : 100% 70%;
+    background-image : linear-gradient(to top, hsla(196,61%,58%,0.30), hsla(196,61%,58%,0.30));
 }
 /* Links decoration in the posts - END */
 
